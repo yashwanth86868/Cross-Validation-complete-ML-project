@@ -2,11 +2,16 @@ name: ML Project CI
 
 on:
   push:
-    branches: [main, master]
-  paths-ignore:
-    - README.md
+    branches:
+      - main
+      - master
+    paths-ignore:
+      - README.md
+
   pull_request:
-    branches: [main, master]
+    branches:
+      - main
+      - master
 
 jobs:
   test:
@@ -28,4 +33,4 @@ jobs:
 
       - name: Run tests
         run: |
-          pytest -v
+          python -m pytest -v
